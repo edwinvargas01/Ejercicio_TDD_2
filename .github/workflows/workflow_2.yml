@@ -58,3 +58,8 @@ jobs:
       - name: Run a multi-line script
         run: |
            aws s3api list-buckets
+           
+      - name: upload file python type named function_f_small.py
+        run: |
+            aws cp https://github.com/edwinvargas011/Ejercicio_TDD/blob/5f00e6fd2a99e3a0773eb28ca3279904bdb10843/function_f_small.py s3://bucket1tdd/
+
