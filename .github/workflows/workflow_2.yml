@@ -28,17 +28,14 @@ jobs:
         with:
            python-version: '3.8'
       
-      - name: Install virtualenv and execute pytest
+      - name: Install virtualenv and execute pytest and the tests are executed
         run: | 
           pip install virtualenv
           virtualenv env
           source env/bin/activate
           pip install -r requirements.txt
-    
-      # Runs a single command using the runners shell
-      - name: The tests are executed
-        run: pytest
-
+          pytest
+          
       # Runs a set of commands using the runners shell
       
       - name: Configure AWS Credentials
@@ -54,7 +51,7 @@ jobs:
         run: |
            aws s3api list-buckets
            
-      - name: First the repository is cloned, then the folder is accessed and the python file is searched. Finally, file python type named function_f_small.py is charged
+      - name: The file python type named function_f_small.py is charged to S3.
         run: |
             aws s3 cp ./function_f_small.py s3://bucket1tdd/
   
