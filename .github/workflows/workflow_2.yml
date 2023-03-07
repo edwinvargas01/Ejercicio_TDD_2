@@ -61,7 +61,5 @@ jobs:
            
       - name: First the repository is cloned, then the folder is accessed and the python file is searched. Finally, file python type named function_f_small.py is charged
         run: |
-            git clone https://github.com/edwinvargas011/Ejercicio_TDD.git
-            cd Ejercicio_TDD
             aws cp function_f_small.py s3://bucket1tdd/
   
