@@ -47,4 +47,5 @@ jobs:
           
       - name: Conf
         run: |
+          pip install zappa
           zappa deploy dev
