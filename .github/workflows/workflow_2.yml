@@ -32,7 +32,6 @@ jobs:
         run: | 
           pip install virtualenv
           virtualenv env
-          source env/bin/activate
           pip install -r requirements.txt
 
       # Runs a set of commands using the runners shell
@@ -47,5 +46,6 @@ jobs:
           
       - name: Deploy the resources and actions
         run: |
+          source env/bin/activate
           pip install zappa
           zappa deploy dev
