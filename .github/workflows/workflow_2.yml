@@ -45,7 +45,7 @@ jobs:
           aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
           aws-region: us-east-1
           
-      - name: Conf
+      - name: Deploy the resources and actions
         run: |
           pip install zappa
-          zappa deploy dev
+          zappa update dev
